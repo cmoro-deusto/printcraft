@@ -317,7 +317,7 @@ mod tests {
     #[cfg(target_os = "linux")]
     #[test]
     fn linux_display_gpus_reads_connected_connectors() -> std::io::Result<()> {
-        let dir = std::env::temp_dir().join(format!("printcraft-drm-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("pdfcraft-drm-{}", std::process::id()));
         let card = |name: &str, (vendor, device): (u32, u32)| -> std::io::Result<()> {
             std::fs::create_dir_all(dir.join(name).join("device"))?;
             std::fs::write(dir.join(name).join("device/vendor"), format!("{vendor:#06x}\n"))?;
